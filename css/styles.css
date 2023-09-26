@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas {
+  width: 800px;
+  height: 800px;
+  border: 1px solid;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.pixel {
+  width: auto;
+  height: auto;
+  background-color: black;
+}
