@@ -10,10 +10,6 @@ body {
   border: 1px solid;
   display: flex;
   flex-flow: row wrap;
-}
-
-.pixel {
-  width: auto;
-  height: auto;
-  background-color: black;
+  justify-content: space-around;
+  align-items: center;
 }
