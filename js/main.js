@@ -1,18 +1,31 @@
-function generateGrid(canvasSize) {
-  let tileWidth = canvasSize/gridSize;
-  let tileHeight = canvasSize/gridSize;
-  canvas.replaceChildren();
-  for (let i = 0; i < pixelGrid; i++) {
-    let pixel = document.createElement('div');
-    pixel.style.backgroundColor = 'black';
-    pixel.style.width = `${ tileWidth-2 }px`;
-    pixel.style.height = `${ tileHeight-2 }px`
-    canvas.appendChild(pixel);
-  }
+const CANVAS = document.querySelector('.canvas');
+generateGrid(16);
+let pixels = createListeners();
+
+
+function createListeners(){
+  let pixels = document.querySelectorAll('.pixel');
+  pixels.forEach((pixel) => {
+    pixel.addEventListener('click', changeBackground);
+  });
+  return pixels;
 }
 
-let gridSize = 16;
-let pixelGrid = Math.pow(gridSize,2);
-let canvas = document.querySelector('.canvas');
+function changeBackground(pixel) {
+  pixel.target.classList.add('color-change')
+  console.log(pixel)
+}
 
-generateGrid(800);
+function generateGrid(gridSize) {
+  CANVAS.replaceChildren();
+  for (let i = 0; i < gridSize; i++) {
+    let row = document.createElement('div');
+    row.classList.add('row');
+    for (let j = 0; j < gridSize; j++) {
+      let pixel = document.createElement('div');
+      pixel.classList.add('pixel');
+      row.appendChild(pixel);
+    }
+    CANVAS.appendChild(row);
+  }
+}
