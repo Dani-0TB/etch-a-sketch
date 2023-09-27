@@ -7,8 +7,36 @@ html {
 
 body {
   display: flex;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+}
+
+.header {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  padding: 1rem 0;
+}
+
+.btn {
+  height: 2em;
+  width: auto;
+  background-color: #427eff;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #405bf7;
+}
+
+.btn:active {
+  background-color: #3d40f1;
 }
 
 .canvas {
@@ -36,10 +64,11 @@ body {
 .pixel {
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: white;
   flex: 1;
 }
 
 .color-change {
-  background-color: white;
+  background-color: black;
 }
+

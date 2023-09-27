@@ -1,19 +1,25 @@
 const CANVAS = document.querySelector('.canvas');
-generateGrid(16);
-let pixels = createListeners();
+let pixels;
+let gridSize = 16;
+init(gridSize);
+
 
 
 function createListeners(){
   let pixels = document.querySelectorAll('.pixel');
   pixels.forEach((pixel) => {
-    pixel.addEventListener('click', changeBackground);
+    pixel.addEventListener('mouseenter', changeBackground);
   });
   return pixels;
 }
 
 function changeBackground(pixel) {
-  pixel.target.classList.add('color-change')
-  console.log(pixel)
+  pixel.target.classList.add('color-change');
+}
+
+function init(size) {
+  generateGrid(size);
+  pixels = createListeners();
 }
 
 function generateGrid(gridSize) {
